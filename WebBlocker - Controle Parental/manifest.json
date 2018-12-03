@@ -1,0 +1,42 @@
+{
+	"manifest_version": 2,
+	"name": "WebBlocker - Controle Parental",
+	"version": "1.0",
+	"description": "Bloqueie conteúdo inapropriados no Google Chrome!",
+	"icons": {
+		"48": "48.png",
+		"128": "128.png"
+	},
+	"browser_action": {
+		"default_icon": "48.png",
+		"default_title": "WebBlocker",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"http://*/*", "https://*/*", "tabs"
+	],
+	"background": {
+		"scripts" : ["background.js", "2.0.0-crypto-sha256.js"],
+		"persistent" : true
+	},
+	"options_page": "options.html",
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": [
+				"site.js",
+				"content.js"
+			],
+			"run_at": "document_start",
+			"all_frames": true
+		},{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": [
+				"overlay.js" 
+			],
+			"run_at": "document_end",
+			"all_frames": true
+		}
+	]
+}
+

@@ -1,0 +1,302 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebBlocker - Controle Parental</title>
+    <meta name="description" content="Parental Control Admin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="2.0.0-crypto-sha256.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+</head>
+
+<body>
+    <!-- Painel esquerdo -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="options.html">
+                            <i class="menu-icon fa  fa-key"></i>Bloquear Sites</a>
+                    </li>
+                    <li class="active">
+                        <a href="sobre.html"> <i class="menu-icon fa  ti-comments-smiley"></i>Sobre </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+    <!-- Painel esquerdo -->
+    <!-- Painel direito -->
+    <div id="right-panel" class="right-panel">
+        <div id="block">
+            <header id="header" class="header">
+                <div class="page-header float-left col-lg-12">
+                    <div class="page-title">
+                        <a id="menuToggle" class="menutoggle pull-left">
+                            <i class="fa fa fa-tasks"></i>
+                        </a>
+                        <h1>Configurações da extensão</h1>
+                    </div>
+                </div>
+            </header>
+            <br>
+            <br>
+            <div class="form-check">
+                &ensp;&ensp;
+                <input class="form-check-input" type="checkbox" value="" id="cf_status">
+                <label class="form-check-label" for="cf_status">Ativar o bloqueio de conteúdo</label>
+            </div>
+            <br>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h6>Bloquear <strong>URL</strong></h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <div id="blocked_url"></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <input id="url_content" type="text" class="form-control" placeholder="www.sitebloqueado.com">
+                                            <span class="input-group-btn">
+                                                <input class="btn btn-default" type="button" id="add_url" value="Adicionar URL" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Bloquear 
+                            <strong>palavras</strong></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <div id="blocked_word"></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <input id="text_content" type="text" class="form-control" placeholder="exemplo">
+                                            <span class="input-group-btn">
+                                                <input class="btn btn-default" type="button" id="add_text" value="Adicionar palavras" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>
+                        <strong>Censura</strong> de palavras</h4>
+                </div>
+                <div class="card-body">
+                    <input id="pf_status" type="checkbox" />Ativando este recurso o conteúdo abaixo será substituido por
+                    *****
+                    <br />
+                    <br />
+                    <div class="row form-group">
+                        <div class="col-12 col-md-12">
+                            <div id="profanity_word"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row form-group">
+                        <div class="col-12 col-md-12">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="input-group">
+                                        <input id="keyword_pf" type="text" class="form-control" placeholder="exemplo">
+                                        <span class="input-group-btn">
+                                            <input class="btn btn-default" type="button" id="add_pf" value="Adicionar palavras" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Definições de bloqueio</h4>
+                </div>
+                <div class="card-body">
+                    <div id="adv_settings" class="advanced">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="adv_reason">
+                            <label class="form-check-label" for="adv_reason">
+                                Exibir descrição do bloqueio
+                            </label>
+                        </div>
+                        <br>
+                        <div>
+                            Mensagem de aviso:
+                            <br>
+                            <div class="input-group">
+                                <input id="adv_warning" type="text" class="form-control" placeholder="mensagem">
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            Redirecionar páginas bloqueadas para:
+                            <br />
+                            <div class="input-group">
+                                <input type="text" id="adv_redirect" class="form-control" placeholder="www.exemplo.com" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Definições de Permissionamento e bloqueio total do conteúdo</h4>
+                </div>
+                <div class="card-body">
+                    <div id="adv_settings" class="advanced">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="adv_stop">
+                            <label class="form-check-label" for="adv_stop">
+                                Bloquear todo o conteúdo
+                            </label>
+
+                        </div>
+                        <hr>
+                        <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <input id="trust_content" type="text" class="form-control" placeholder="exemplo">
+                                            <span class="input-group-btn">
+                                                <input class="btn btn-default" type="button" id="add_trust" value="Adicionar" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listbox">
+                            <div class="listbox_head" id="lst_ts">
+                                <b>Sites Permitidos</b>
+                            </div>
+                            <div id="trusted_url"></div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Definições de
+                        <strong>Senha</strong>
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div id="adv_settings" class="advanced">
+                        <div class="form-check">
+                            <div style="float:right;position:relative;top:-2px">
+                                <button id="btn_pass" disabled="true">Definir Senha</button>
+                            </div>
+                            <label>
+                                <input type="checkbox" id="pwd_status" /> Ativar proteção por senha</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div id="action_buttons">
+                <button id='btn_save' type="button" class="btn btn-outline-success btn-sm">
+                    <i class="fa fa-chevron-down"></i>&nbsp; Salvar</button>
+                <button id='btn_reset' type="button" class="btn btn-outline-warning btn-sm">
+                    <i class="fa fa-refresh"></i>&nbsp; Restaurar Configurações</button>
+                <div id="status" style="visibility:hidden">
+                    <img style="position:relative;top:4px;margin-right:4px" src="loader.gif" width="16" height="16"> Salvando
+                    definições...
+                </div>
+            </div>
+        </div>
+        <!-- Painel direito -->
+        <div style="visibility:hidden">
+            <p id="btn_pass" disabled="true"></p>
+            <p id="pwd_status"></p>
+            <p id="btn_advSettings"></p>
+            <p id="lst_bs"></p>
+            <p id="lst_bk"></p>
+            <p id="lst_ts"></p>
+            <p id="lst_pf"></p>
+            <p id="profanity_word"></p>
+            <p id="cf_status"></p>
+            <p id="adv_stop"></p>
+            <p id="adv_reason"></p>
+            <p id="adv_warning"></p>
+            <p id="adv_redirect"></p>
+            <p id="adv_redirect"></p>
+            <p id="keyword_cf"></p>
+            <p id="add_cf"></p>
+            <p id="pf_status"></p>
+            <p id="keyword_pf"></p>
+            <p id="add_pf"></p>
+            <p id="btn_generate"></p>
+            <p id="ls_status"></p>
+            <p id="ls_url"></p>
+        </div>
+        <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+        <script src="assets/js/dashboard.js"></script>
+        <script src="assets/js/widgets.js"></script>
+        <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
+        <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+        <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+        <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+</body>
+
+</html>

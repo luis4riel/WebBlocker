@@ -1,0 +1,5 @@
+[tinyFilter]
+CONTENT_FILTER.BLOCK.SITES=pornhub.com,redtube.com,xvideos.com,roblox.com,pubgmobile.com,pubgbr.com
+CONTENT_FILTER.BLOCK.WORDS=nudez,pornografia,porn,pornography,porno,milf,hentai,nude,blowjob,fetish,sexy video,sexy tube,sexy porn,handjob,sexy model,nudity,nu,fetiche,fortnite
+CONTENT_FILTER.TRUST.SITES=wikipedia.,kiddle.co.
+PROFANITY_FILTER.WORDS=foda-se,burro,droga,merda,idiota,mijo,filho da puta,mamas,pau,fuck,ass,damn,shit,asshole,piss,cunt,cocksucker,motherfucker,tits,cock,dick
